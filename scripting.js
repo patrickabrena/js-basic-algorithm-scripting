@@ -284,4 +284,50 @@ const TITLE_CASE_A_SENTENCE = () => {
 
   titleCase("I'm a little tea pot");
 };
-TITLE_CASE_A_SENTENCE();
+// TITLE_CASE_A_SENTENCE();
+
+const SLICE_AND_SPLICE = () => {
+  function frankenSplice(arr1, arr2, n) {
+    //two arrays and an index "n" foro the parameters
+    //copy each element of arr1 into arr2 beginning the insertion at index of arr2
+    //both input arrays should be untouched
+    //have to copy arr2 into a new array using slice method
+
+    let newArr2 = arr2.slice(0);
+    // let resultArr = []; //don't need this because splice returns the DELETED elements
+    // console.log(newArr2);
+
+    //create for loop it iterate through arr1 and insert each iteration into newArr2 at index n + i of newArr2
+    //REMEMBER: n + i otherwise each index of newArr2 is being inserted at that same  index every iteration which will return newArr2 with arr1 indexes reversed
+    for (let i = 0; i < arr1.length; i++) {
+      //use splice method now to insert the arr1[i] into newArr2.
+      // resultArr = newArr2.splice(n + i, 0, arr1[i]); // incorrect because splice stores DELETED elements so this would return an empty arr
+      newArr2.splice(n + i, 0, arr1[i]);
+    }
+    console.log(newArr2);
+    return newArr2;
+  }
+
+  frankenSplice([1, 2, 3], [4, 5, 6], 1);
+};
+// SLICE_AND_SPLICE();
+
+const FALSY_BOUNCER = () => {
+  function bouncer(arr) {
+    //init resultArr to empty arr so I can push values that are true in it
+    let resultArr = [];
+
+    //create for loop to iterate through arr
+    for (let i = 0; i < arr.length; i++) {
+      //create if statement to check if value at arr[i] exists, push it into resultArr
+      if (arr[i]) {
+        resultArr.push(arr[i]);
+      }
+    }
+    console.log(resultArr);
+    return resultArr;
+  }
+
+  bouncer([7, "ate", "", false, 9]);
+};
+FALSY_BOUNCER();
