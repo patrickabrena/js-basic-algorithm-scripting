@@ -74,5 +74,297 @@ function reverseString(str) {
 
 reverseString("hello");
     -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--
+      Factorialize a Number
+
+Return the factorial of the provided integer.
+
+If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
+
+Factorials are often represented with the shorthand notation n!
+
+For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
+
+Only integers greater than or equal to zero will be supplied to the function.
+Tests
+
+Waiting: factorialize(5) should return a number.
+Waiting: factorialize(5) should return 120.
+Waiting: factorialize(10) should return 3628800.
+Waiting: factorialize(20) should return 2432902008176640000.
+Waiting: factorialize(0) should return 1.
+
+
+
+function factorialize(num) {
+  return num;
+}
+
+factorialize(5);
+    -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--
+      Find the Longest Word in a String
+
+Return the length of the longest word in the provided sentence.
+
+Your response should be a number.
+Tests
+
+Passed: findLongestWordLength("The quick brown fox jumped over the lazy dog") should return a number.
+Passed: findLongestWordLength("The quick brown fox jumped over the lazy dog") should return 6.
+Passed: findLongestWordLength("May the force be with you") should return 5.
+Passed: findLongestWordLength("Google do a barrel roll") should return 6.
+Passed: findLongestWordLength("What is the average airspeed velocity of an unladen swallow") should return 8.
+Passed: findLongestWordLength("What if we try a super-long word such as otorhinolaryngology") should return 19.
+
+
+//SETUP
+function findLongestWordLength(str) {
+
+//create regex to match a-z and log matches in an array to iterate through array to check for string with most characters
+
+let individualWordCheck = /[a-z]+/ig;
+
+let allWords = str.match(individualWordCheck)
+// this returns an arr with each word as an index
+
+console.log(allWords)
+
+//create a for loop to iterate through allWords array
+
+//init variable to store the largestNum value which would be the number of characters in that word
+      let largestNum = 0;
+
+for (let i = 0; i < allWords.length; i ++ ) { 
+  //create a nested for loop to iterate through all the indexes containing a string 
+  for (let j = 0; j < allWords[i].length; j ++) {
+      
+      if (allWords[i].length > largestNum) {
+        //if the length of each word is larger than the number value of largestNum, store the value of allWords[j] at that iteration inside largestNum
+          largestNum = allWords[j].length
+          // console.log(largestNum)
+          console.log(allWords[j])
+        
+      }
+      
+  }
+
+}
+
+// console.log(largestNum)
+return largestNum
+
+
+
+  
+}
+
+findLongestWordLength("Google do a barrel roll");
+    -->
+    <!---->
+    <!---->
+    <!---->
+    <!--
+      Return Largest Numbers in Arrays
+
+Return an array consisting of the largest number from each provided sub-array. For simplicity, the provided array will contain exactly 4 sub-arrays.
+
+Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
+Tests
+
+Waiting: largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]) should return an array.
+Waiting: largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]) should return [27, 5, 39, 1001].
+Waiting: largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]) should return [9, 35, 97, 1000000].
+Waiting: largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]]) should return [25, 48, 21, -3].
+
+
+SETUP//
+function largestOfFour(arr) {
+  return arr;
+}
+
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+    -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--
+      Confirm the Ending
+
+Check if a string (first argument, str) ends with the given target string (second argument, target).
+
+This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+Tests
+
+Passed: confirmEnding("Bastian", "n") should return true.
+Passed: confirmEnding("Congratulation", "on") should return true.
+Passed: confirmEnding("Connor", "n") should return false.
+Passed: confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification") should return false.
+Passed: confirmEnding("He has to give me a new name", "name") should return true.
+Passed: confirmEnding("Open sesame", "same") should return true.
+Passed: confirmEnding("Open sesame", "sage") should return false.
+Passed: confirmEnding("Open sesame", "game") should return false.
+Passed: confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain") should return false.
+Passed: confirmEnding("Abstraction", "action") should return true.
+Passed: Your code should not use the built-in method .endsWith() to solve the challenge.
+
+
+
+SETUP//
+function confirmEnding(str, target) {
+  return str;
+}
+
+confirmEnding("Bastian", "n");
+    -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--
+      Repeat a String Repeat a String
+
+Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number. For the purpose of this challenge, do not use the built-in .repeat() method.
+Tests
+
+Waiting: repeatStringNumTimes("*", 3) should return the string ***.
+Waiting: repeatStringNumTimes("abc", 3) should return the string abcabcabc.
+Waiting: repeatStringNumTimes("abc", 4) should return the string abcabcabcabc.
+Waiting: repeatStringNumTimes("abc", 1) should return the string abc.
+Waiting: repeatStringNumTimes("*", 8) should return the string ********.
+Waiting: repeatStringNumTimes("abc", -2) should return an empty string ("").
+Waiting: The built-in repeat() method should not be used.
+Waiting: repeatStringNumTimes("abc", 0) should return "".
+
+
+
+//SETUP
+function repeatStringNumTimes(str, num) {
+  return str;
+}
+
+repeatStringNumTimes("abc", 3);
+    -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--
+      Truncate a String
+
+Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
+Tests
+
+Passed: truncateString("A-tisket a-tasket A green and yellow basket", 8) should return the string A-tisket....
+Passed: truncateString("Peter Piper picked a peck of pickled peppers", 11) should return the string Peter Piper....
+Passed: truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length) should return the string A-tisket a-tasket A green and yellow basket.
+Passed: truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2) should return the string A-tisket a-tasket A green and yellow basket.
+Passed: truncateString("A-", 1) should return the string A....
+Passed: truncateString("Absolutely Longer", 2) should return the string Ab....
+
+
+//SETUP
+function truncateString(str, num) {
+  return str;
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 8);
+    -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--
+      Finders Keepers
+
+Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'. This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
+Tests
+
+Waiting: findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }) should return 8.
+Waiting: findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }) should return undefined.
+
+//SETUP
+function findElement(arr, func) {
+  let num = 0;
+  return num;
+}
+
+findElement([1, 2, 3, 4], num => num % 2 === 0);
+    -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--
+      Boo who
+
+Check if a value is classified as a boolean primitive. Return true or false.
+
+Boolean primitives are true and false.
+Tests
+
+Passed: booWho(true) should return true.
+Passed: booWho(false) should return true.
+Passed: booWho([1, 2, 3]) should return false.
+Passed: booWho([].slice) should return false.
+Passed: booWho({ "a": 1 }) should return false.
+Passed: booWho(1) should return false.
+Passed: booWho(NaN) should return false.
+Passed: booWho("a") should return false.
+Passed: booWho("true") should return false.
+Passed: booWho("false") should return false.
+
+
+//SETUP
+function booWho(bool) {
+  return bool;
+}
+
+booWho(null);
+    -->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!---->
+    <!--
+      Title Case a Sentence
+
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+For the purpose of this exercise, you should also capitalize connecting words like the and of.
+Tests
+
+Waiting: titleCase("I'm a little tea pot") should return a string.
+Waiting: titleCase("I'm a little tea pot") should return the string I'm A Little Tea Pot.
+Waiting: titleCase("sHoRt AnD sToUt") should return the string Short And Stout.
+Waiting: titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") should return the string Here Is My Handle Here Is My Spout.
+
+
+
+
+      //SETUP
+      function titleCase(str) {
+  return str;
+}
+
+titleCase("I'm a little tea pot");
+    -->
   </body>
 </html>
