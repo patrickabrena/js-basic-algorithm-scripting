@@ -330,4 +330,56 @@ const FALSY_BOUNCER = () => {
 
   bouncer([7, "ate", "", false, 9]);
 };
-FALSY_BOUNCER();
+// FALSY_BOUNCER();
+
+const WHERE_DO_I_BELONG = () => {
+  //look and geeks for geeks bubble sort
+  //bubble sort iterates through an array and compares current index to current index + 1 and puts the index wth higher value on the right
+  //not suitable for larger data types, average case and worst care are awful
+  //Time Complexity = O(N^2) or QUADRATIC TIME
+  function getIndexToIns(arr, num) {
+    // bubble sort method
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length - 1 - i; j++) {
+        // the arr.length - 1 - i is used to ensure the loop doesn't unnessecarily check elements that have already been sorted
+        if (arr[j] > arr[j + 1]) {
+          //need to make a temporary variable to store the 5 so I can change arr[j] + 1 to 5 and so and so forth
+          let temp = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = temp;
+        }
+      }
+    }
+    console.log(arr); // [ 3, 3, 5, 20 ]
+    //create new forLoop with sorted arr
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] >= num) {
+        return i;
+      }
+    }
+    return arr.length;
+  }
+
+  getIndexToIns([5, 3, 20, 3], 5);
+};
+// WHERE_DO_I_BELONG();
+
+const MUTATIONS = () => {
+  const mutation = (arr) => {
+    // turn in lowercase with toLowerCase method ()
+    let a = arr[0].toLowerCase();
+    let b = arr[1].toLowerCase();
+    //since we're comparing the first string to the second string  it shoudl be for as long as "i" is less than b.length
+    for (let i = 0; i < b.length; i++) {
+      // indexOf() returns the position(index number) of the first occurrence of a value in a string
+      if (a.indexOf(b[i]) < 0) {
+        //if indexOf(b at "i") is less than zero, return false REMEMBER -1 is returned if argument doesn't exist
+        return false;
+      }
+    }
+    return true;
+  };
+  let ans = mutation(["hello", "Hello"]);
+  console.log(ans);
+};
+MUTATIONS();
