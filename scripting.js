@@ -288,6 +288,14 @@ const TITLE_CASE_A_SENTENCE = () => {
 
 const SLICE_AND_SPLICE = () => {
   function frankenSplice(arr1, arr2, n) {
+    //You are given two arrays and an index.
+
+    //Copy each element of the first array into the second array, in order.
+    //
+    //Begin inserting elements at index n of the second array.
+    //
+    //Return the resulting array. The input arrays should remain the same after the function runs.
+    /********/
     //two arrays and an index "n" foro the parameters
     //copy each element of arr1 into arr2 beginning the insertion at index of arr2
     //both input arrays should be untouched
@@ -313,6 +321,10 @@ const SLICE_AND_SPLICE = () => {
 // SLICE_AND_SPLICE();
 
 const FALSY_BOUNCER = () => {
+  // Remove all falsy values from an array. Return a new array; do not mutate the original array.
+
+  // Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+  /*******/
   function bouncer(arr) {
     //init resultArr to empty arr so I can push values that are true in it
     let resultArr = [];
@@ -333,6 +345,10 @@ const FALSY_BOUNCER = () => {
 // FALSY_BOUNCER();
 
 const WHERE_DO_I_BELONG = () => {
+  //Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
+
+  //For example, getIndexToIns([1,2,3,4], 1.5) should return 1 because it is greater than 1 (index 0), but less than 2 (index 1).
+  /*******/
   //look and geeks for geeks bubble sort
   //bubble sort iterates through an array and compares current index to current index + 1 and puts the index wth higher value on the right
   //not suitable for larger data types, average case and worst care are awful
@@ -382,4 +398,29 @@ const MUTATIONS = () => {
   let ans = mutation(["hello", "Hello"]);
   console.log(ans);
 };
-MUTATIONS();
+// MUTATIONS();
+
+const CHUNKY_MONKEY = () => {
+  function chunkArrayInGroups(arr, size) {
+    //write a function that splits an array (first param) into groups the length of size (second param) and returns them as a 2D array
+
+    // init result array and temp array
+    let result = [];
+    let temp = [];
+
+    //create for loop to iterate through arr
+    for (let i = 0; i < arr.length; i++) {
+      temp.push(arr[i]);
+
+      if (temp.length == size || i == arr.length - 1) {
+        result.push(temp);
+        temp = [];
+      }
+    }
+    return result;
+  }
+
+  let ans = chunkArrayInGroups(["a", "b", "c", "d", "e"], 2);
+  console.log(ans);
+};
+CHUNKY_MONKEY();
