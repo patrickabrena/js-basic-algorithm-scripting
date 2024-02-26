@@ -402,25 +402,28 @@ const MUTATIONS = () => {
 
 const CHUNKY_MONKEY = () => {
   function chunkArrayInGroups(arr, size) {
-    //write a function that splits an array (first param) into groups the length of size (second param) and returns them as a 2D array
+    //first init my result array and and my temp array
+    //result array is going to the temp array pushed inside it
 
-    // init result array and temp array
     let result = [];
     let temp = [];
 
-    //create for loop to iterate through arr
+    //create for loop to iterate through the arr
     for (let i = 0; i < arr.length; i++) {
+      //no matter what i'll be pushing arr[i] at each iteration into the temp array
       temp.push(arr[i]);
 
-      if (temp.length == size || i == arr.length - 1) {
+      //now create if statement with the condition if temp.length == size or if i == arr.length - 1 (if i equals the last index of the array) push the temp array into the result array
+      if (temp.length === size || i === arr.length - 1) {
         result.push(temp);
+        //REMEMBER: don't forget to reset temp to empty for the next set of numbers or indexes
         temp = [];
       }
     }
+    console.log(result);
     return result;
   }
 
-  let ans = chunkArrayInGroups(["a", "b", "c", "d", "e"], 2);
-  console.log(ans);
+  chunkArrayInGroups(["a", "b", "c", "d", "e", "f", "g", "h"], 3);
 };
 CHUNKY_MONKEY();
