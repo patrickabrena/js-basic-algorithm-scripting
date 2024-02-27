@@ -1,4 +1,9 @@
 const CONVERT_CELSIUS_TO_FARENHIT = () => {
+  //The formula to convert from Celsius to Fahrenheit is the temperature in Celsius times 9/5, plus 32.
+
+  //You are given a variable celsius representing a temperature in Celsius. Use the variable fahrenheit already defined and assign it the Fahrenheit temperature equivalent to the given Celsius temperature. Use the formula mentioned above to help convert the Celsius temperature to Fahrenheit.
+
+  /*******/
   function convertCtoF(celsius) {
     //formula is C x (9/5) + 32
     let fahrenheit = celsius * (9 / 5) + 32;
@@ -12,6 +17,10 @@ const CONVERT_CELSIUS_TO_FARENHIT = () => {
 
 const REVERSE_A_STRING = () => {
   function reverseString(str) {
+    //Reverse the provided string and return the reversed string.
+
+    //For example, "hello" should become "olleh".
+    /******/
     /*PLAN*/
     //init empty array that I will push the value of str at index "i" while inside a for loop
     let newArr = [];
@@ -61,6 +70,14 @@ const REVERSE_A_STRING = () => {
 
 const FACTORIALIZE_A_NUMBER = () => {
   function factorialize(num) {
+    //Return the factorial of the provided integer.
+
+    //If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
+
+    //Factorials are often represented with the shorthand notation n!
+
+    //For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
+    /*****/
     //create a base case. if num is less than or equal to 0 return 1
     if (num <= 0) {
       return 1;
@@ -112,6 +129,11 @@ const FIND_THE_LONGEST_WORD_IN_A_STRING = () => {
 
 const RETURN_LARGEST_NUMBERS_IN_ARRAY = () => {
   function largestOfFour(arr) {
+    //Return the length of the longest word in the provided sentence.
+    //Your response should be a number.
+
+    /******/
+    //create regex to match a-z and log matches in an array to iterate through array to check for string with most characters
     // let biggestInt = 0; //instead I should init biggestInt inside top level for loop as arr[i][0] (initializng the var as the first element of the sub arr)
     let biggestIntArr = [];
 
@@ -144,6 +166,11 @@ const RETURN_LARGEST_NUMBERS_IN_ARRAY = () => {
 
 const CONFIRM_THE_ENDING = () => {
   function confirmEnding(str, target) {
+    //Check if a string (first argument, str) ends with the given target string (second argument, target).
+
+    //This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+    Tests;
+    /******/
     //PLAN
     // - create a regex to test if the string has the lastRegex var
     //will make create regex using the "new RegExp()" constructor function
@@ -160,6 +187,9 @@ const CONFIRM_THE_ENDING = () => {
 
 const REPEAT_A_STRING_REPEAT_A_STRING = () => {
   function repeatStringNumTimes(str, num) {
+    //Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number. For the purpose of this challenge, do not use the built-in .repeat() method.
+
+    /*****/
     /*Plan*/
     // - use a for loop and while "i" is less than the "num" variable, keep iterating
     // at each iteration,  repeatedStr = repeatedStr + str
@@ -210,6 +240,8 @@ const TRUNCATE_A_STRING = () => {
 
 const FINDERS_KEEPERS = () => {
   function findElement(arr, func) {
+    //Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'. This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
+    /*******/
     //create a for loop to look through (iterate) an array and returns the first element that passes the "truth" test
     // truth test is a function
     // return the arr[i] that satisfies the function or return unndefined
